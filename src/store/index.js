@@ -5,6 +5,7 @@ export const INITIAL_STATE = {
 	products: [],
 	tolerableUpperLimits: null,
 	currency: null,
+	error: null,
 };
 
 const AppContext = createContext(INITIAL_STATE);

@@ -29,9 +29,36 @@ const appReducer = (state = INITIAL_STATE, action) => {
 					};
 				return product;
 			});
+
+			const nutrientsInBasket = products
+				.filter((product) => product.quantityInBasket)
+				.map((product) =>
+					product.nutrients.map((nutrient) => ({
+						...nutrient,
+						amount: nutrient.amount * product.quantityInBasket,
+					}))
+				)
+				.flat()
+				.reduce(
+					(acc, cur) => ({ ...acc, [cur.id]: (acc[cur.id] || 0) + cur.amount }),
+					{}
+				);
+			const exceededNutrients = [];
+			state.tolerableUpperLimits.forEach((nutrient) => {
+				if (nutrientsInBasket[nutrient.id] > nutrient.amount)
+					exceededNutrients.push(nutrient.id);
+			});
+			if (exceededNutrients.length)
+				return {
+					...state,
+					error: `This Product cannot be added because you have reached the maximum amount of these vitamins: ${exceededNutrients.join(
+						", "
+					)}`,
+				};
 			return {
 				...state,
 				products,
+				error: "",
 			};
 		case REMOVE_PRODUCT_FROM_BASKET:
 			var products = state.products.map((product) => {
@@ -45,6 +72,7 @@ const appReducer = (state = INITIAL_STATE, action) => {
 			return {
 				...state,
 				products,
+				error: "",
 			};
 		default:
 			return state;

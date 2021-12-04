@@ -3,3 +3,7 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 }
+.Basket-error {
+	color: #cf1b1b;
+	font-size: 14px;
+}

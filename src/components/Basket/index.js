@@ -7,7 +7,7 @@ import "./styles.css";
 const Basket = () => {
 	const {
 		dispatch,
-		state: { products, currency },
+		state: { products, currency, error },
 	} = useContext(AppContext);
 	const itemsInBasket = products.filter((product) => product.quantityInBasket);
 	const removeFromBasket = (name) =>
@@ -21,16 +21,19 @@ const Basket = () => {
 			{!itemsInBasket.length ? (
 				"no items on basket"
 			) : (
-				<div className="Basket-section">
-					{itemsInBasket.map((p) => (
-						<Product
-							product={p}
-							currency={currency}
-							action="Remove"
-							updateBasket={removeFromBasket}
-						/>
-					))}
-				</div>
+				<>
+					<div className="Basket-section">
+						{itemsInBasket.map((p) => (
+							<Product
+								product={p}
+								currency={currency}
+								action="Remove"
+								updateBasket={removeFromBasket}
+							/>
+						))}
+					</div>
+					{error && <em className="Basket-error">{error}</em>}
+				</>
 			)}
 		</>
 	);
