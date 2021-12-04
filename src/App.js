@@ -1,9 +1,9 @@
 import React from "react";
-import ProductList from "./ProductList";
+import ProductList from "./components/ProductsList";
 import logo from "./vitl-logo.png";
 import "./App.css";
 import { AppProvider } from "./store";
-import Basket from "./Basket";
+import Basket from "./components/Basket";
 
 function App() {
 	return (

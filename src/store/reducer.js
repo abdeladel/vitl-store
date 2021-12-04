@@ -4,7 +4,7 @@ import {
 	ADD_PRODUCT_TO_BASKET,
 	REMOVE_PRODUCT_FROM_BASKET,
 } from "./actions";
-import { INITIAL_STATE } from "./store";
+import { INITIAL_STATE } from ".";
 
 const appReducer = (state = INITIAL_STATE, action) => {
 	const { type, payload } = action;

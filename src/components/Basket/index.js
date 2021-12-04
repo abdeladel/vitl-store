@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import { AppContext } from "./store";
-import Product from "./Product";
-import { REMOVE_PRODUCT_FROM_BASKET } from "./actions";
+import { AppContext } from "../../store";
+import Product from "../Product";
+import { REMOVE_PRODUCT_FROM_BASKET } from "../../store/actions";
 
 const Basket = () => {
 	const {

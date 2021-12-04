@@ -1,11 +1,11 @@
 import React, { useContext, useEffect } from "react";
-import { AppContext } from "./store";
+import { AppContext } from "../../store";
 import {
 	ADD_PRODUCT_TO_BASKET,
 	SET_NUTRIENTS_CONFIGURATION,
 	SET_PRODUCTS_LIST,
-} from "./actions";
-import Product from "./Product";
+} from "../../store/actions";
+import Product from "../Product";
 
 const ProductList = () => {
 	const {
