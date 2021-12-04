@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import ProductList from "./ProductList";
+import logo from "./vitl-logo.png";
+import "./App.css";
+import { AppProvider } from "./store";
+import Basket from "./Basket";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div className="App">
+			<header className="App-header">
+				<nav className="App-nav">
+					<img src={logo} className="App-logo" alt="vitl" />
+				</nav>
+			</header>
+			<AppProvider>
+				<section className="App-body">
+					<Basket />
+				</section>
+				<section className="App-body">
+					<ProductList />
+				</section>
+			</AppProvider>
+
+			<footer></footer>
+		</div>
+	);
 }
 
 export default App;
