@@ -1,0 +1,14 @@
+.Product {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex-wrap: wrap;
+	margin: 10px;
+	width: 150px;
+}
+
+.Product-image {
+	height: 100px;
+	width: 100%;
+	background-color: gray;
+}

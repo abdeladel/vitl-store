@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { AppContext } from "../../store";
 import Product from "../Product";
 import { REMOVE_PRODUCT_FROM_BASKET } from "../../store/actions";
+import "./styles.css";
 
 const Basket = () => {
 	const {
@@ -20,9 +21,7 @@ const Basket = () => {
 			{!itemsInBasket.length ? (
 				"no items on basket"
 			) : (
-				<div
-					style={{ display: "flex", flexWrap: "wrap", flexDirection: "row" }}
-				>
+				<div className="Basket-section">
 					{itemsInBasket.map((p) => (
 						<Product
 							product={p}

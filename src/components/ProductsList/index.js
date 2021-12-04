@@ -6,6 +6,7 @@ import {
 	SET_PRODUCTS_LIST,
 } from "../../store/actions";
 import Product from "../Product";
+import "./styles.css";
 
 const ProductList = () => {
 	const {
@@ -21,15 +22,17 @@ const ProductList = () => {
 				dispatch({ type: SET_NUTRIENTS_CONFIGURATION, payload: config });
 			});
 	}, [dispatch]);
+
 	const AddToBasket = (name) =>
 		dispatch({
 			type: ADD_PRODUCT_TO_BASKET,
 			payload: name,
 		});
+
 	return (
 		<>
 			<h2>Products</h2>
-			<div style={{ display: "flex", flexWrap: "wrap", flexDirection: "row" }}>
+			<div className="Products">
 				{products.map((p) => (
 					<Product
 						product={p}

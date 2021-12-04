@@ -1,26 +1,17 @@
 import React from "react";
+import { CURRENCIES } from "../../constants";
+import "./styles.css";
 
 const Product = ({ product, currency, updateBasket, action }) => {
 	const { name, price, quantityInBasket } = product;
 	return (
-		<div
-			style={{
-				display: "flex",
-				flexDirection: "column",
-				justifyContent: "center",
-				flexWrap: "wrap",
-				margin: "10px",
-				width: 150,
-			}}
-		>
-			<div
-				style={{ height: 100, width: "100%", backgroundColor: "gray" }}
-			></div>
+		<div className="Product">
+			<div className="Product-image"></div>
 			{name}
 			<br />
-			<div style={{ textAlign: "right" }}>
-				{price} {currency} {action === "Remove" && `x ${quantityInBasket}`}
-			</div>
+			price: {price} {CURRENCIES[currency]}
+			<br />
+			{action === "Remove" && ` quantity: ${quantityInBasket}`}
 			<button onClick={() => updateBasket(name)}>{action}</button>
 		</div>
 	);
