@@ -5,10 +5,26 @@
 	flex-wrap: wrap;
 	margin: 10px;
 	width: 150px;
+	border: 1px solid #6e6e6e;
+	border-radius: 3px;
 }
 
 .Product-image {
 	height: 100px;
 	width: 100%;
-	background-color: gray;
+	background-color: #6e6e6e;
+	background-image: url("../../vitl-logo.png");
+	background-size: 90%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.Product-details {
+	padding: 5px;
+}
+
+.Product-button {
+	width: 90%;
+	align-self: center;
+	margin-bottom: 5px;
 }

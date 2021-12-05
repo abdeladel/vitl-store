@@ -7,12 +7,16 @@ const Product = ({ product, currency, updateBasket, action }) => {
 	return (
 		<div className="Product">
 			<div className="Product-image"></div>
-			{name}
-			<br />
-			price: {price} {CURRENCIES[currency]}
-			<br />
-			{action === "Remove" && ` quantity: ${quantityInBasket}`}
-			<button onClick={() => updateBasket(name)}>{action}</button>
+			<div className="Product-details">
+				{name}
+				<br />
+				price: {price} {CURRENCIES[currency]}
+				<br />
+				{action === "Remove" && ` quantity: ${quantityInBasket}`}
+			</div>
+			<button className="Product-button" onClick={() => updateBasket(name)}>
+				{action}
+			</button>
 		</div>
 	);
 };

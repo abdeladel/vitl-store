@@ -21,8 +21,9 @@ function App() {
 					<ProductList />
 				</section>
 			</AppProvider>
-
-			<footer></footer>
+			<footer className="App-footer">
+				<p>© 2021 Vitl-store. All rights reserved</p>
+			</footer>
 		</div>
 	);
 }

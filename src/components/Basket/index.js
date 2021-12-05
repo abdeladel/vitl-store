@@ -9,17 +9,20 @@ const Basket = () => {
 		dispatch,
 		state: { products, currency, error },
 	} = useContext(AppContext);
+
 	const itemsInBasket = products.filter((product) => product.quantityInBasket);
+
 	const removeFromBasket = (name) =>
 		dispatch({
 			type: REMOVE_PRODUCT_FROM_BASKET,
 			payload: name,
 		});
+
 	return (
 		<>
 			<h2>Basket</h2>
 			{!itemsInBasket.length ? (
-				"no items on basket"
+				"no items in basket"
 			) : (
 				<>
 					<div className="Basket-section">
